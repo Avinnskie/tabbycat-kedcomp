@@ -3,7 +3,6 @@
 # Nginx is the reverse proxy
 # This allows static files to be served directly and to split traffic between
 # the WSGI and ASGI servers
-# nginx: bin/start-nginx
 
 # WSGI server handles the standard django routes; optimised for high performance
 wsgi: gunicorn wsgi:application --config './config/gunicorn.conf'
