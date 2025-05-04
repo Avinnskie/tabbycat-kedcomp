@@ -32,3 +32,4 @@ RUN npm ci --only=production
 # Compile all the static files
 RUN npm run build
 RUN python ./tabbycat/manage.py collectstatic --noinput -v 0
+CMD ["gunicorn", "tabbycat.wsgi:application", "--bind", "0.0.0.0:8000"]
